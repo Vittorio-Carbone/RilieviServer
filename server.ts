@@ -609,8 +609,8 @@ app.get("/api/getPerizie/:cod", async (req, res, next) => {
 });
 app.post("/api/deleteFotoPerizia/:id", async (req, res, next) => {
     let id = new ObjectId(req["params"].id);
-    let img:string[] = req.body.url;
-    let descrizione:string[] = req.body.descrizione;
+    let img:any = req.body.url;
+    let descrizione:any = req.body.descrizione;
     const client = new MongoClient(connectionString);
     await client.connect();
     const collection = client.db(DBNAME).collection("perizie");
@@ -626,7 +626,6 @@ app.post("/api/deleteFotoPerizia/:id", async (req, res, next) => {
         requ.then((data) => res.send(data));
         requ.catch((err) => res.status(500).send(`Errore esecuzione query: ${err.message}`));
         requ.finally(() => client.close());
-
     });
     rq.catch((err) => res.status(500).send(`Errore esecuzione query: ${err.message}`));
     rq.finally(() => client.close());
