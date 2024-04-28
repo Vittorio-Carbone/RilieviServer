@@ -11,7 +11,6 @@ import _axios from "axios";
 const _nodemailer = require("nodemailer");
 import _bcrypt from "bcryptjs";
 import _jwt from "jsonwebtoken";
-import { google } from "googleapis";
 
 
 // Lettura delle password e parametri fondamentali
@@ -187,42 +186,6 @@ app.post("/api/login", async (req, res, next) => {
     });
     rq.catch((err) => res.status(500).send(`Errore esecuzione query: ${err.message}`));
     rq.finally(() => client.close());
-});
-
-// 10. Login con Google
-app.post("/api/googleLogin", async (req: any, res: any, next: any) => {
-    if (!req.headers["authorization"]) {
-        res.status(403).send("Token mancante");
-    }
-    else {
-        // Otteniamo il token completo
-        let token = req.headers["authorization"];
-        // Otteniamo il payload del token con una decodifica Base64
-        let payload = _jwt.decode(token);
-        let username = payload.email;
-        console.log("USERNAME: " + username);
-        const client = new MongoClient(connectionString);
-        await client.connect();
-        const collection = client.db(DBNAME).collection("periti");
-        let regex = new RegExp(`^${username}$`, "i");
-        console.log(regex.test("v.carbone.2225@vallauri.edu"));
-        let rq = collection.findOne({ "email": regex }, { "projection": { "email": 1 } });
-        rq.then((dbUser) => {
-            if (!dbUser) {
-                res.status(403).send("Username non autorizzato all'accesso");
-            }
-            else {
-                let token = createToken(dbUser);
-                console.log(token);
-                res.setHeader("authorization", token);
-                // Fa si che la header authorization venga restituita al client
-                res.setHeader("access-control-expose-headers", "authorization");
-                rq.then((data) => { console.log(data); res.send(data) });
-            }
-        });
-        rq.catch((err) => res.status(500).send(`Errore esecuzione query: ${err.message}`));
-        rq.finally(() => client.close());
-    }
 });
 
 
