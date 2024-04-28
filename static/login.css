@@ -1,0 +1,95 @@
+/* CSS Personalizzato */
+body {
+	background-color: #f8f9fa;
+	font-family: Arial, sans-serif;
+  }
+  
+  #login {
+	margin-top: 50px;
+  }
+  
+  .input-group-text {
+	background-color: #3188e6;
+	color: #fff;
+	border: none;
+  }
+  
+  .form-control {
+	border-left: none;
+  }
+  
+  #lblErrore,
+  #lblMail {
+	display: none;
+	margin-top: 10px;
+  }
+  #lblMail{
+	background-color: #8af6b0;
+	border: 1px solid #008b31;
+	color: #007629;
+	padding: 11px;
+  }
+  #lblErrore.show,
+  #lblMail.show {
+	display: block;
+  }
+  
+  .btn-block {
+	font-weight: 500;
+
+	margin-top: 20px;
+	background-color: #3188e6;
+	border: none;
+	transition: all 0.3s ease;
+  }
+  
+  .btn-block:hover {
+	background-color: #266fbd;
+  }
+  
+  #btnGoogle {
+	font-weight: 500;
+	margin-top: 10px;
+	background-color: #dc3545;
+  }
+  
+  #btnGoogle:hover {
+	background-color: #c82333;
+  }
+  
+  #btnRecuperaPassword {
+	color: #3188e6;
+	font-size: 15px;
+	margin-top: -20px;
+  }
+  
+  #btnRecuperaPassword:hover {
+	color: #0056b3;
+  }
+  .form-control:focus {
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Black box shadow */
+  }
+  .container {
+	width: 500px; /* Larghezza desiderata della scheda */
+	margin: 0 auto; /* Imposta i margini automaticamente per centrare il contenitore */
+	padding:10px 50px; /* Aggiungi spazio interno al contenitore */
+	background-color: #fff; /* Colore di sfondo del contenitore */
+	border-radius: 8px; /* Bordi arrotondati */
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ombra leggera */
+  }
+  html, body {
+	height: 85%;
+	margin: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  }  
+
+
+  .container h2 {
+	font-size: 24px;
+	font-weight: bold;
+	color: #333;
+	margin-bottom: 20px;
+	margin-top: 10px;
+  } 	

@@ -1,0 +1,122 @@
+[
+  {
+    "_id": {
+      "$oid": "662185f8e8a6c69010dd4d7f"
+    },
+    "codOperatore": "2",
+    "data": "01-04-2024",
+    "ora": "21:17",
+    "coordinate": "44.554432, 7.720200",
+    "descrizione": "Veicolo rimasto coinvolto in un incidente stradale, con danni visibili al corpo macchina.",
+    "foto": [
+      {
+        "url": "https://res.cloudinary.com/dzedclpbx/image/upload/v1713473097/Es_03_Upload/vwk0gaofg2flse1jawrt.jpg",
+        "descrizioneFoto": "Danni visibili al corpo macchina."
+      },
+      {
+        "url": "https://res.cloudinary.com/dzedclpbx/image/upload/v1713473097/Es_03_Upload/utkcgrjpenoo32ayvya6.jpg",
+        "descrizioneFoto": "Danni sulla parte anteriore del veicolo."
+      },
+      {
+        "url": "https://res.cloudinary.com/dzedclpbx/image/upload/v1713473097/Es_03_Upload/sui7h2kwjzyjm5xzl0jf.jpg",
+        "descrizioneFoto": "Dettaglio dei danni alla carrozzeria."
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "662185f8e8a6c69010dd4d81"
+    },
+    "codOperatore": "3",
+    "data": "11-02-2024",
+    "ora": "16:42",
+    "coordinate": "44.558622, 7.727195",
+    "descrizione": "Incidente stradale che ha causato danni gravi a una motocicletta, con feriti.",
+    "foto": [
+      {
+        "url": "https://res.cloudinary.com/dzedclpbx/image/upload/v1713473116/Es_03_Upload/knwbtj7hjhqj6czv6plx.jpg",
+        "descrizioneFoto": "dw"
+      },
+      {
+        "url": "https://res.cloudinary.com/dzedclpbx/image/upload/v1713473116/Es_03_Upload/udcmj51cmvnlz644swzo.jpg",
+        "descrizioneFoto": ""
+      },
+      {
+        "url": "https://res.cloudinary.com/dzedclpbx/image/upload/v1713473116/Es_03_Upload/l25egfqpr7xkqfhonqdj.jpg",
+        "descrizioneFoto": ""
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "662185f8e8a6c69010dd4d82"
+    },
+    "codOperatore": "1",
+    "data": "09-04-2024",
+    "ora": "08:15",
+    "coordinate": "44.549080, 7.727624",
+    "descrizione": "Collisione tra due veicoli con danni materiali e coinvolgimento di persone.",
+    "foto": [
+      {
+        "url": "https://res.cloudinary.com/dzedclpbx/image/upload/v1713473077/Es_03_Upload/c2s1morzmlkmjivojwck.jpg",
+        "descrizioneFoto": "Veicoli coinvolti nella collisione."
+      },
+      {
+        "url": "https://res.cloudinary.com/dzedclpbx/image/upload/v1713473078/Es_03_Upload/dlw6r9lrnez5u0luoyhc.jpg",
+        "descrizioneFoto": "Danni alla parte posteriore di un veicolo."
+      },
+      {
+        "url": "https://res.cloudinary.com/dzedclpbx/image/upload/v1713473078/Es_03_Upload/cypgkz80penqxn9hupis.jpg",
+        "descrizioneFoto": "Rottura del vetro di un veicolo coinvolto."
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "662185f8e8a6c69010dd4d83"
+    },
+    "codOperatore": "4",
+    "data": "07-04-2024",
+    "ora": "14:20",
+    "coordinate": "44.548936, 7.711345",
+    "descrizione": "Veicolo incidentato durante il trasporto, con danni alla carrozzeria.",
+    "foto": [
+      {
+        "url": "https://res.cloudinary.com/dzedclpbx/image/upload/v1713473151/Es_03_Upload/riqpmadw6xvelf5jfssh.jpg",
+        "descrizioneFoto": "Danni sulla parte laterale del veicolo."
+      },
+      {
+        "url": "https://res.cloudinary.com/dzedclpbx/image/upload/v1713473150/Es_03_Upload/etr2dqjuoe675wypeftb.jpg",
+        "descrizioneFoto": "Veicolo incidentato su una strada."
+      },
+      {
+        "url": "https://res.cloudinary.com/dzedclpbx/image/upload/v1713473150/Es_03_Upload/wjshhn6no9kmekxmwzel.jpg",
+        "descrizioneFoto": "Dettaglio dei danni alla carrozzeria."
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "662185f8e8a6c69010dd4d85"
+    },
+    "codOperatore": "5",
+    "data": "05-04-2024",
+    "ora": "17:30",
+    "coordinate": "44.553842, 7.717991",
+    "descrizione": "Guasto improvviso del veicolo durante la marcia, causando rallentamenti nel traffico.",
+    "foto": [
+      {
+        "url": "https://res.cloudinary.com/dzedclpbx/image/upload/v1713473173/Es_03_Upload/x3spa9fsomzuakbvncv7.jpg",
+        "descrizioneFoto": "Veicolo fermo sulla carreggiata."
+      },
+      {
+        "url": "https://res.cloudinary.com/dzedclpbx/image/upload/v1713473173/Es_03_Upload/oxuzjvft5kxrgfhhqvk0.jpg",
+        "descrizioneFoto": "Congestione del traffico."
+      },
+      {
+        "url": "https://res.cloudinary.com/dzedclpbx/image/upload/v1713473173/Es_03_Upload/cui5zhhc5j48b5ip8de8.jpg",
+        "descrizioneFoto": "Veicolo in avaria sulla corsia di emergenza."
+      }
+    ]
+  }
+]

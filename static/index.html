@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Assicurazione - Admin</title>
+  <link rel="icon" href="img/icoVallauri.png" type="image/png" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="index.css">
+  <script src="./jquery-3.5.1.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="./axios@1.1.2.min.js"></script>
+  <script src="./libreria.js"></script>
+  <script src="./index.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZKYgxbiyRE7DknUpnRP2QHCBVjvLgH7g&callback=initMap"
+    async defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+  <div id="overlay">
+    <div class="popupImg">
+      <div id="closeImg" style="text-align: right !important; margin-bottom: 10px;">&times;</div>
+      <img src="" alt="" id="imgPopup"><br>
+      <div style="text-align: center; margin-top: 20px;">
+        <label for="txtAreaPop"><b>Descrizione della foto: </b></label>
+        <textarea name="txtAreaPop" id="txtAreaPop" cols="20" rows="3"></textarea>
+      </div>
+      <br>
+      <div style="text-align: center;">
+        <button type="button" class="btn btn-primary btnElimina" id="btnEliminaPop"
+          style="margin-bottom: 10px; margin-right: 10px;">Elimina foto</button>
+        <button type="button" style="margin-bottom: 10px;margin-left: 10px;" class="btn btn-primary btnInvia"
+          id="btnInviaPop">Applica modifiche</button>
+      </div>
+    </div>
+  </div>
+  <div id="containerAdmin">
+    <nav class="navbar">
+      <div class="navbar-left">
+        <span class="logo">Rilievi e Perizie</span>
+      </div>
+      <div class="navbar-right">
+        <span class="navLink active" id="home">Home</span>
+        <span class="navLink" id="editInfo">Modifica informazioni</span>
+        <span class="navLink btnLogout" id="logOut"><i class="fa-solid fa-right-from-bracket"></i></span>
+      </div>
+    </nav>
+    <div class="container">
+      <div id="homeDiv">
+        <div id="map">
+
+        </div>
+        <div id="divInfo">
+          <h2>Informazioni sul percorso</h2>
+          <div class="info">
+            <strong>Durata:</strong> <span id="durata"></span>
+          </div>
+          <div class="info">
+            <strong>Lunghezza:</strong> <span id="lunghezza"></span>
+          </div>
+        </div>
+        <div id="visualizzaInfo">
+          <input type="text" id="idInfo" style="display: none;">
+          <button type="button" id="buttonInfo">&times;</button>
+          <h2 id="titoloInfo">Perizia del</h2>
+          <p id="operatoreInfo">operatore 1</p>
+          <p id="coordinateInfo">coordinata 1</p>
+          <label for="descriz" style="font-weight: bold;">Descrizione della perizia:</label>
+          <textarea name="descriz" id="descrizioneInfo" cols="30" rows="3"></textarea>
+          <Label style="font-weight: bold;margin-top: 10px;">Aggiungi immagine:</Label>
+          <input type="file" multiple id="fotoInputInfo">
+          <div id="fotoInfo">
+
+          </div>
+          <button type="button" class="btn btn-primary btnAnnulla" id="btnAnnullaInfo"
+            style="margin-bottom: 10px; margin-left: 10px;">Annulla</button>
+          <button type="button" class="btn btn-primary btnInvia" id="btnInviaInfo"
+            style="margin-bottom: 10px; margin-left: 10px;">Applica modifiche</button>
+          <button type="button" class="btn btn-primary btnElimina" id="btnEliminaInfo"
+            style="margin-bottom: 10px; margin-left: 10px;">Elimina</button>
+        </div>
+        <h3 style="margin-top: 10px;">Selezionare un perito per vedere le sue perizie</h3>
+
+        <div id="operatori">
+
+        </div>
+      </div>
+      <div id="editDiv">
+        <div class="contenitore">
+          <div class="button-wrapper">
+            <button class="button" id="addOperator">AGGIUNGI OPERATORE</button>
+            <button class="button" id="addPerizia">AGGIUNGI PERIZIA</button>
+            <button class="button" id="eliminaPerizia">ELIMINA OPERATORE</button>
+          </div>
+          <br>
+          <div class="alert alert-danger alert-dismissible" id="lblMsg">
+            <!-- Dentro button è stato eliminato data-dismiss="alert"
+                         che non consente più il successivo .show() del msg -->
+            <button type="button" class="close">&times;</button>
+            <strong id="lblMsgText"></strong>
+          </div>
+          <div class="msgSuccess alert alert-danger alert-dismissible" id="lblMsgSucc">
+            <!-- Dentro button è stato eliminato data-dismiss="alert"
+                         che non consente più il successivo .show() del msg -->
+            <button type="button" class="close" style="height: 100% !important;">&times;</button>
+            <strong id="lblMsgTextSucc"></strong>
+          </div>
+          <br>
+          <!-- AGGIUNGI OPERATORE -->
+          <div id="popupOp" class="popup forms">
+            <div class="popup-content">
+              <div id="form-intervento">
+                <div class="form-group">
+                  <label for="codOperatoreOp">Codice operatore:</label>
+                  <input type="text" id="codOperatoreOp" name="codOperatoreOp" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label for="nome">Nome:</label>
+                  <input type="text" id="nome" name="nome" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label for="cognome">Cognome:</label>
+                  <input type="text" id="cognome" name="cognome" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label for="email">Email:</label>
+                  <input type="text" id="email" name="email" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label for="foto">Foto profilo:</label>
+                  <input type="file" id="foto" name="foto" class="form-control">
+                </div>
+                <p class="noInfo avviso">Mancano Informazioni !</p>
+                <button type="button" class="btn btn-primary btnAnnulla" id="btnAnnullaOp">Annulla</button>
+                <button type="button" class="btn btn-primary btnInvia" id="btnInviaOp">Invia</button>
+
+              </div>
+            </div>
+          </div>
+
+
+
+
+          <!-- AGGIUNGI PERIZIA -->
+          <div id="divNormale" class="clearfix forms">
+            <form id="form-intervento">
+              <input type="hidden" name="_id" id="_id">
+              <div class="form-group">
+                <label for="codOperatore">Codice operatore:</label>
+                <input type="text" id="codOperatore" name="codOperatore" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="coord">Coordinate:</label>
+                <input type="text" id="coordinate" name="coord" class="form-control"
+                  placeholder="Latitudine, Longitudine">
+              </div>
+              <div class="form-group">
+                <label for="data">Data:</label>
+                <input type="date" id="data" name="data" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="ora">Ora:</label>
+                <input type="time" id="ora" name="ora" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="descrizione">Descrizione:</label>
+                <textarea id="descrizione" name="descrizione" class="form-control"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="foto">Foto:</label>
+                <input type="file" id="fotoPer" name="foto" multiple class="form-control">
+              </div>
+            </form>
+            <p class="noInfo avviso">Mancano Informazioni !</p>
+            <button type="button" class="btn btn-primary btnAnnulla" id="btnAnnulla">Annulla</button>
+            <button type="button" class="btn btn-primary btnInvia" id="btnInvia">Invia</button>
+          </div>
+
+
+
+
+
+
+
+
+
+
+          <!-- ELIMINA OPERATORE -->
+          <div id="divDeleteOp" class="clearfix forms">
+            <form>
+              <p style="font-size: 16pt; margin-bottom:20px !important; font-weight: bold;">Inserire i dati
+                dell'operatore</p>
+              <div class="form-group">
+                <label for="codOperatoreDel">Codice operatore:</label>
+                <input type="text" id="codOperatoreDel" name="codOperatoreDel" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="emailDel">Email:</label>
+                <input type="text" id="emailDel" name="codOpemailDeleratore" class="form-control">
+              </div>
+              <p class="noInfo avviso">Mancano Informazioni !</p>
+              <button type="button" class="btn btn-primary btnAnnulla" id="btnAnnullaDel">Annulla</button>
+              <button type="button" class="btn btn-primary btnInvia" id="btnInviaDel">Invia</button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="containerUsers">
+    <b style="color: red;">ATTENZIONE!</b> <br> Questa sezione è riservata agli amministratori.
+  </div>
+</body>
+
+</html>

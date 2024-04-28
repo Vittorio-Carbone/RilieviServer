@@ -1,0 +1,672 @@
+
+
+/* ====================================================== NAVBAR ========================================= */
+#overlay {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(0, 0, 0, 0.5);
+	/* Colore di sfondo con opacità */
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 998;
+	/* Inferiore al popup */
+}
+
+.popupImg {
+	width: auto;
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 5px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+	position: relative;
+	z-index: 999;
+	/* Sovrapposto all'overlay */
+}
+
+#closeImg {
+
+	font-size: 24px;
+	cursor: pointer;
+}
+
+#closeImg:hover {
+	color: red;
+	font-size: 24px;
+	cursor: pointer;
+}
+
+#imgPopup {
+	width: 500px;
+	height: auto;
+	border-radius: 5px;
+}
+.navLink{
+	font-size: 15pt;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ====================================================== NAVBAR ========================================= */
+.btnLogout:hover {
+	color: red;
+	scale: 1.3;
+}
+
+.btnLogout {
+	color: black;
+	scale: 1;
+}
+
+.active {
+	font-weight: 700;
+}
+
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	color: black;
+	background-color: #f0f0f0;
+	padding: 10px 20px;
+}
+
+.navbar-left {
+	flex: 1;
+}
+
+.navbar-right {
+	text-align: right;
+}
+
+.logo {
+	font-size: 2rem;
+	color: black;
+	font-weight: bold;
+}
+
+.navbar-right span {
+	color: black;
+	margin-left: 30px;
+	cursor: pointer;
+}
+
+.navbar-right span:hover {
+	text-decoration: underline;
+}
+
+
+
+
+
+
+/* ====================================================== PAGINA EDIT ========================================= */
+/* Stile per la textarea con ID "descrizioneInfo" */
+#descrizioneInfo {
+	width: 45%;
+	height: 100px;
+	padding: 10px;
+	font-size: 16px;
+	line-height: 1.5;
+	border: 2px solid #ccc;
+	border-radius: 8px;
+	resize: vertical;
+	/* Per consentire solo la regolazione verticale della dimensione */
+	transition: border-color 0.3s ease;
+}
+
+/* Stile quando la textarea è in focus */
+#descrizioneInfo:focus {
+	border-color: #007bff;
+	/* Colore del bordo evidenziato */
+	outline: none;
+	/* Rimuove l'outline di default */
+}
+
+/* Stile per il testo placeholder */
+#descrizioneInfo::placeholder {
+	color: #999;
+	/* Colore del testo del placeholder */
+}
+
+/* Stile per il bordo quando la textarea ha un errore */
+#descrizioneInfo.error {
+	border-color: #ff0000;
+	/* Colore del bordo rosso per indicare un errore */
+}
+
+/* Stile per il testo quando la textarea ha un errore */
+#descrizioneInfo.error::placeholder {
+	color: #ff0000;
+	/* Colore del testo del placeholder quando c'è un errore */
+}
+
+
+#fotoInfo {
+	max-height: 300px;
+	overflow-y: auto;
+}
+
+#editDiv {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.contenitore {
+	width: 80%;
+	justify-content: center;
+	align-items: center;
+}
+
+.button-wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+}
+
+.button {
+	padding: 15px 30px;
+	border: none;
+	background-color: #333;
+	color: #fff;
+	font-size: 16px;
+	border-radius: 20px;
+	cursor: pointer;
+	transition: background-color 0.3s, transform 0.3s;
+}
+
+.button:hover {
+	background-color: #555;
+	transform: scale(1.1);
+}
+
+/* =========================================== AGGIUNGI OPERATORE ======================================= */
+.popup {
+	width: 500px;
+	margin: 0px auto;
+}
+
+.popup-content {
+	border-radius: 15px;
+	border: 2px solid #000000;
+	background-color: #fefefe;
+	margin: 4% auto;
+	padding: 20px;
+	width: 100%;
+	max-width: 400px;
+	position: relative;
+}
+
+.close {
+	position: absolute;
+	top: 10px;
+	right: 15px;
+	font-size: 20px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+#closePopup:hover {
+	color: red;
+}
+
+.btnAnnulla {
+	background-color: white !important;
+	color: black !important;
+	border: 3px solid black !important;
+	cursor: pointer !important;
+}
+
+.btnAnnulla:hover {
+	background-color: rgb(216, 216, 216) !important;
+}
+
+.btn-primary {
+	border: 3px solid black !important;
+}
+
+
+
+.buttonInfo{
+	background-color: rgb(236, 236, 236);
+	color: black;
+	border: 0px;
+	padding: 5px 10px;
+	border-radius: 5px;
+	cursor: pointer;
+	border: 2px solid black !important;
+	font-size: 11pt;
+	margin: 1px 10px;
+	box-shadow: 0px 0px 5px rgba(183, 183, 183, 1);
+	transition: all 0.3s;
+}
+.buttonInfo:hover{
+	opacity: 0.8;
+	scale: 1.03;
+}
+
+
+
+#map {
+	height: 500px;
+	width: 100%;
+	border-radius: 10px;
+}
+
+#title {
+	text-align: center;
+	padding-top: 20px !important;
+}
+
+#divInfo {
+	background-color: #f0f0f0;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+	margin-bottom: 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#divInfo h2 {
+	margin: 0;
+	font-size: 1.2rem;
+	color: #333;
+}
+
+#divInfo .info {
+	color: #555;
+	font-size: 1rem;
+	margin-left: 10px;
+}
+
+#divInfo .info strong {
+	font-weight: bold;
+	color: #4b4b4b;
+}
+
+#divInfo .info span {
+	font-weight: bold;
+	color: #7d7d7d;
+}
+
+
+
+.avviso {
+	color: #f44336;
+	border-radius: 10px;
+	margin-bottom: 15px;
+}
+
+#divDeleteOp {
+	border-radius: 15px !important;
+	margin-top: 25px !important;
+	margin-bottom: 50px !important;
+	width: 400px;
+	/* Imposta la larghezza del div */
+	padding: 30px;
+	/* Aggiunge spazio interno al div */
+	border: 1px solid #ccc;
+	/* Aggiunge un bordo al div */
+	border-radius: 5px;
+	/* Aggiunge i bordi arrotondati */
+	background-color: white;
+	/* Imposta il colore dello sfondo */
+	margin: 0 auto;
+	/* Centra il div orizzontalmente */
+	border: 2px solid black;
+	/* Aggiunge un bordo al div */
+
+}
+
+#btnEliminaInfo {
+	background-color: #f44336;
+	color: white;
+	border: 0px;
+	padding: 5px 10px;
+	border-radius: 5px;
+	cursor: pointer;
+
+}
+
+#btnEliminaPop {
+	background-color: #f44336;
+	color: white;
+	border: 0px;
+	padding: 5px 10px;
+	border-radius: 5px;
+	cursor: pointer;
+
+}
+
+#divNormale {
+	border-radius: 15px !important;
+	margin-top: 25px !important;
+	margin-bottom: 50px !important;
+	width: 400px;
+	/* Imposta la larghezza del div */
+	padding: 30px;
+	/* Aggiunge spazio interno al div */
+	border: 1px solid #ccc;
+	/* Aggiunge un bordo al div */
+	border-radius: 5px;
+	/* Aggiunge i bordi arrotondati */
+	background-color: white;
+	/* Imposta il colore dello sfondo */
+	margin: 0 auto;
+	/* Centra il div orizzontalmente */
+	border: 2px solid black;
+	/* Aggiunge un bordo al div */
+}
+
+#divNormale label {
+	display: block;
+	margin-bottom: 5px;
+}
+
+#divNormale input[type="text"],
+#divNormale input[type="date"],
+#divNormale input[type="time"],
+#divNormale textarea,
+#divNormale input[type="file"],
+#divNormale button {
+	width: 100%;
+	/* Imposta la larghezza degli input e dei bottoni al 100% */
+	margin-bottom: 10px;
+	/* Aggiungi spazio tra gli input e i bottoni */
+}
+
+#divNormale button {
+	cursor: pointer;
+	/* Cambia il cursore al passaggio del mouse */
+}
+
+#divNormale .form-group {
+	margin-bottom: 15px;
+	/* Aggiungi spazio tra i gruppi di input */
+}
+
+
+
+
+
+
+.container {
+	padding-top: 20px;
+	visibility: show;
+	text-align: center;
+	color: black !important;
+}
+
+#operatori {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center !important;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	text-align: center;
+	max-height: 510px;
+	overflow-y: auto;
+
+}
+
+#operatori::-webkit-scrollbar {
+	width: 8px;
+	/* Larghezza della scrollbar */
+}
+
+/* Stile per il "pulgar" della scrollbar */
+#operatori::-webkit-scrollbar-thumb {
+	background-color: #888;
+	/* Colore del "pulgar" */
+	border-radius: 4px;
+	/* Bordi arrotondati */
+}
+
+/* Stile per il tracciato della scrollbar */
+#operatori::-webkit-scrollbar-track {
+	background-color: #f1f1f1;
+	/* Colore del tracciato */
+}
+
+
+#fotoInfo::-webkit-scrollbar {
+	width: 8px;
+	margin-right: 5px;
+	/* Larghezza della scrollbar */
+}
+
+/* Stile per il "pulgar" della scrollbar */
+#fotoInfo::-webkit-scrollbar-thumb {
+	background-color: #888;
+	/* Colore del "pulgar" */
+	border-radius: 4px;
+	/* Bordi arrotondati */
+}
+
+/* Stile per il tracciato della scrollbar */
+#fotoInfo::-webkit-scrollbar-track {
+	background-color: #c6c6c6;
+	/* Colore del tracciato */
+}
+
+
+#fotoInfo::-webkit-scrollbar {
+	width: 8px; /* Larghezza della scrollbar */
+	right: 5px !important; /* Distanza dalla destra */
+  }
+
+.card {
+	width: 195px;
+	flex: 0 0 auto;
+	padding: 1%;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+	background-color: #ffffff;
+	transition: transform 0.3s;
+	margin: 1%;
+}
+
+.selected {
+	transform: scale(1.05);
+	box-shadow: 0 6px 12px #3498db;
+	border: 2px solid #3498db;
+	transform: scale(1.05);
+	/* Ingrandisce leggermente la card */
+	transition: all 0.3s;
+}
+
+.card:hover {
+	transform: translateY(-5px);
+}
+
+.card img {
+	width: 100%;
+	border-radius: 10px 10px 0 0;
+}
+
+.card .content {
+	padding-top: 1%;
+}
+
+.card .title {
+	font-size: 15pt;
+	font-weight: bold;
+}
+
+
+
+
+
+.form-group {
+	margin-bottom: 15px;
+}
+
+label {
+	display: block;
+	margin-bottom: 5px;
+}
+
+.form-control {
+	width: 100%;
+	padding: 5px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+.form-control:focus {
+	border-color: #000;
+}
+
+.btn-primary {
+	margin-top: 15px;
+	padding: 5px 10px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	background-color: #000;
+	color: #fff;
+	cursor: pointer;
+}
+
+.btn-primary:hover {
+	background-color: #333;
+}
+
+
+@media (max-width:900px) {
+	.card {
+		width: 150px;
+	}
+
+}
+
+/* terminale md */
+@media (min-width:768px) and (max-width:992px) {
+	#frmInvia input {
+		width: 120%;
+	}
+
+	#frmInvia div:nth-of-type(3) input {
+		width: 105%;
+	}
+}
+
+
+
+#containerUsers {
+	text-align: center;
+	font-size: 20px;
+	background-color: #f0f0f0;
+	border-radius: 10px;
+	padding: 20px;
+	width: 300px;
+	margin: 0px auto;
+	margin-top: 10%;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+#containerUsers b {
+	color: red;
+	font-size: 24px;
+	display: block;
+	margin-bottom: 10px;
+}
+
+#containerUsers br {
+	display: none;
+	/* Rimuove il margin-bottom causato dal <br> */
+}
+
+.msgSuccess {
+	color: green;
+	background-color: rgb(168, 255, 168);
+	font-size: 16px;
+	margin-bottom: 10px;
+	padding: 12px;
+	border: 1px solid green;
+	border-radius: 10px;
+}
+
+
+/* ======================================= Form Informazioni =============================================== */
+#visualizzaInfo {
+	box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.5);
+	width: 60%;
+	margin: 0px auto;
+	background-color: #f0f0f0;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+}
+
+#titoloInfo {
+	padding-top: 20px;
+}
+
+#operatoreInfo {
+	color: #7d7d7d;
+	font-weight: 0;
+}
+
+#coordinateInfo {
+	color: #7d7d7d;
+	font-weight: 0;
+}
+
+#fotoInfo {
+	width: 100%;
+	margin: 0px auto;
+	margin-top: 50px;
+	padding-bottom: 50px;
+}
+
+.fotoPerizia {
+	width: 40%;
+	border-radius: 10px;
+	margin: 0px 10px;
+}
+
+#buttonInfo {
+	border: 0px;
+	margin-top: 10px;
+	scale: 1.5;
+}
+
+#buttonInfo:hover {
+	scale: 1.7;
+	color: #f44336;
+}
+
+#buttonInfo:not(:hover) {
+	scale: 1.5;
+	color: black;
+}
+
+
+@media screen and (max-width: 1000px) {
+	#visualizzaInfo {
+		width: 90%;
+	}
+}
+
+
+@media screen and (max-width: 600px) {
+	.navbar-right{
+		width: 130px !important;
+	}
+}

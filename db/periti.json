@@ -1,0 +1,52 @@
+[
+  {
+    "email": "admin@gmail.com",
+    "password": "admin",
+    "newPass": false
+  },
+  {
+    "codOperatore": "1",
+    "nome": "Mario",
+    "cognome": "Rossi",
+    "email": "mariorossi@gmail.com",
+    "password": "rossi",
+    "img": "https://www.w3schools.com/howto/img_avatar.png",
+    "newPass": false
+  },
+  {
+    "codOperatore": "2",
+    "nome": "Giulia",
+    "cognome": "Bianchi",
+    "email": "giuliabianchi@gmail.com",
+    "password": "bianchi",
+    "img": "https://www.w3schools.com/howto/img_avatar.png",
+    "newPass": false
+  },
+  {
+    "codOperatore": "3",
+    "nome": "Luca",
+    "cognome": "Verdi",
+    "email": "lucaverdi@example.com",
+    "password": "verdi",
+    "img": "https://www.w3schools.com/howto/img_avatar.png",
+    "newPass": false
+  },
+  {
+    "codOperatore": "4",
+    "nome": "Anna",
+    "cognome": "Neri",
+    "email": "annaneri@example.com",
+    "password": "neri",
+    "img": "https://www.w3schools.com/howto/img_avatar.png",
+    "newPass": false
+  },
+  {
+    "codOperatore": "5",
+    "nome": "Francesco",
+    "cognome": "Russo",
+    "email": "francescorusso@example.com",
+    "password": "russo",
+    "img": "https://www.w3schools.com/howto/img_avatar.png",
+    "newPass": false
+  }
+]
