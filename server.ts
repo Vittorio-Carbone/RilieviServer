@@ -31,7 +31,7 @@ const app = _express();
 
 // Creazione ed avvio del server https, a questo server occorre passare le chiavi RSA (pubblica e privata)
 // app è il router di Express, si occupa di tutta la gestione delle richieste https
-const HTTPS_PORT: number = parseInt(process.env.HTTPS_PORT);
+const HTTPS_PORT: number = parseInt(process.env.HTTPS_PORT) || 4000;
 let paginaErrore;
 const PRIVATE_KEY = _fs.readFileSync("./keys/privateKey.pem", "utf8");
 const CERTIFICATE = _fs.readFileSync("./keys/certificate.crt", "utf8");
@@ -609,8 +609,8 @@ app.get("/api/getPerizie/:cod", async (req, res, next) => {
 });
 app.post("/api/deleteFotoPerizia/:id", async (req, res, next) => {
     let id = new ObjectId(req["params"].id);
-    let img = req["body"].url;
-    let descrizione = req["body"].descrizione;
+    let img:string = req["body"].url;
+    let descrizione:string = req["body"].descrizione;
     const client = new MongoClient(connectionString);
     await client.connect();
     const collection = client.db(DBNAME).collection("perizie");
