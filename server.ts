@@ -137,15 +137,7 @@ let message = _fs.readFileSync("./message.html", "utf8");
 */
 
 // 8. Configurazione di nodemailer con utilizzo di oAuth2
-const o_Auth2 = JSON.parse(process.env.oAuthCredential as any)
-const OAuth2 = google.auth.OAuth2; // Oggetto OAuth2
-const OAuth2Client = new OAuth2(
-    o_Auth2["client_id"],
-    o_Auth2["client_secret"]
-);
-OAuth2Client.setCredentials({
-    refresh_token: o_Auth2.refresh_token,
-});
+
 let message = _fs.readFileSync("./message.html", "utf8");
 
 // 9. Login
