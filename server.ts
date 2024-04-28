@@ -551,20 +551,16 @@ app.post("/api/deletePerizia/:id", async (req, res, next) => {
 
 
 app.post("/api/addFotoPerizia/:id", async (req, res, next) => {
-    let id = new ObjectId(req.params.id);
-    let imgs: any[] = req.body.imgs; // Utilizzo any[] per bypassare temporaneamente il problema
-    console.log(imgs);
+    let id = new ObjectId(req["params"].id);
+    let imgs:any = req["body"].imgs;
+    console.log(imgs)
     const client = new MongoClient(connectionString);
-    try {
-        await client.connect();
-        const collection = client.db(DBNAME).collection("perizie");
-        const result = await collection.updateOne({ "_id": id }, { "$push": { "foto": { "$each": imgs } } });
-        res.send(result);
-    } catch (err) {
-        res.status(500).send(`Errore esecuzione query: ${err.message}`);
-    } finally {
-        client.close();
-    }
+    await client.connect();
+    const collection = client.db(DBNAME).collection("perizie");
+    let rq = collection.updateOne({ "_id": id }, { "$push": { "foto": { "$each": imgs } } });
+    rq.then((data) => res.send(data));
+    rq.catch((err) => res.status(500).send(`Errore esecuzione query: ${err.message}`));
+    rq.finally(() => client.close());
 });
 
 app.post("/api/modificaDescrizioneFoto/:id", async (req, res, next) => {
@@ -613,8 +609,8 @@ app.get("/api/getPerizie/:cod", async (req, res, next) => {
 });
 app.post("/api/deleteFotoPerizia/:id", async (req, res, next) => {
     let id = new ObjectId(req["params"].id);
-    let img:string = req["body"].url;
-    let descrizione:string = req["body"].descrizione;
+    let img:string[] = req["body"].url;
+    let descrizione:string[] = req["body"].descrizione;
     const client = new MongoClient(connectionString);
     await client.connect();
     const collection = client.db(DBNAME).collection("perizie");
