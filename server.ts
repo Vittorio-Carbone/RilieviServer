@@ -552,7 +552,7 @@ app.post("/api/deletePerizia/:id", async (req, res, next) => {
 
 app.post("/api/addFotoPerizia/:id", async (req, res, next) => {
     let id = new ObjectId(req["params"].id);
-    let imgs = req["body"].imgs;
+    let imgs:string[] = req["body"].imgs;
     console.log(imgs)
     const client = new MongoClient(connectionString);
     await client.connect();
