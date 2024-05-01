@@ -678,6 +678,9 @@ label {
 	}
 	.button-wrapper{
 		display: flex;
-		flex-direction: row;
+		flex-direction: row !important;
+	}
+	.button{
+		margin-bottom: 15px !important;
 	}
 }
