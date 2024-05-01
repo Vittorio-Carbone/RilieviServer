@@ -678,7 +678,7 @@ label {
 	}
 	.button-wrapper{
 		width: 40% !important;
-		display: flex;
+		display: flex !important;
 		flex-direction: row !important;
 	}
 	.button{
