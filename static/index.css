@@ -40,10 +40,10 @@
 }
 
 #imgPopup {
-	width: 500px;
-	height: auto;
-	max-height: 600px !important;
-	border-radius: 5px;
+	width: 300px;
+    height: auto;
+    max-height: 350px !important;
+    border-radius: 5px;
 }
 .navLink{
 	font-size: 15pt;
