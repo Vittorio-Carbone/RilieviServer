@@ -9,9 +9,7 @@ let perizie = [];
 let userLogged;
 let _idInfo;
 $(document).ready(async function () {
-	$("#download").on("click", function () {
-		console.log("download")
-	});
+	
 	controllaLogIn();
 
 	$("#overlay").hide();
@@ -745,3 +743,6 @@ function visualizzaFoto(url, descrizione, codOperatore, _id) {
 	$("#overlay").fadeIn(1000);
 }
 
+function downloadImg(img){
+	console.log(img);
+}
