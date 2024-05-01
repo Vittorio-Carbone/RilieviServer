@@ -42,7 +42,7 @@
 #imgPopup {
 	width: 500px;
 	height: auto;
-	max-height: 600px;
+	max-height: 600px !important;
 	border-radius: 5px;
 }
 .navLink{
