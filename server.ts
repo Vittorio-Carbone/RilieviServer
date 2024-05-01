@@ -460,7 +460,7 @@ app.post("/api/cambiaPassword", async (req, res, next) => {
 app.post("/api/addBase64CloudinaryImage", (req, res, next) => {
     let codOp = req["body"].codOp;
     let imgBase64 = req["body"].imgBase64;
-    console.log(codOp)
+    console.log(imgBase64)
     _cloudinary.v2.uploader.upload(imgBase64, { "folder": "Es_03_Upload" })
         .catch((err) => {
             res.status(500).send(`Error while uploading file on Cloudinary: ${err}`);
