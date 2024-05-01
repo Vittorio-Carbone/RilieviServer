@@ -747,17 +747,15 @@ function downloadImg() {
 	let img = $("#imgPopup").attr("src");
 	console.log(img);
 
-	const link = document.createElement('a');
-	link.href = img;
-	link.download = img; // Cambia il nome del file se necessario
+	// Creare un elemento di ancoraggio
+    let a = document.createElement('a');
 
-	// Crea un evento di click per attivare il download
-	const clickEvent = new MouseEvent('click', {
-		view: window,
-		bubbles: true,
-		cancelable: true
-	});
+    // Impostare l'URL dell'immagine come href
+    a.href = img;
 
-	// Simula il click sul link per avviare il download
-	link.dispatchEvent(clickEvent);
+    // Impostare l'attributo download con il nome del file desiderato
+    a.download = img.split('/').pop();
+
+    // Simulare un clic sull'elemento di ancoraggio
+    a.click();
 }
