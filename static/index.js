@@ -9,7 +9,7 @@ let perizie = [];
 let userLogged;
 let _idInfo;
 $(document).ready(async function () {
-	
+
 	controllaLogIn();
 
 	$("#overlay").hide();
@@ -600,11 +600,11 @@ $(document).ready(async function () {
 			modificaInfo(response.data);
 			$("#overlay").fadeOut(500);
 			caricaMarkers();
-	
+
 		});
 		rq.catch(errore);
 	}
-	
+
 	function eliminaFoto() {
 		let _id = _idInfo;
 		let img = $("#imgPopup").attr("src");
@@ -614,7 +614,7 @@ $(document).ready(async function () {
 			modificaInfo(response.data);
 			caricaMarkers();
 			$("#overlay").fadeOut(500);
-	
+
 		});
 		rq.catch(errore);
 	}
@@ -743,7 +743,21 @@ function visualizzaFoto(url, descrizione, codOperatore, _id) {
 	$("#overlay").fadeIn(1000);
 }
 
-function downloadImg(){
+function downloadImg() {
 	let img = $("#imgPopup").attr("src");
 	console.log(img);
+
+	const link = document.createElement('a');
+	link.href = img;
+	link.download = img; // Cambia il nome del file se necessario
+
+	// Crea un evento di click per attivare il download
+	const clickEvent = new MouseEvent('click', {
+		view: window,
+		bubbles: true,
+		cancelable: true
+	});
+
+	// Simula il click sul link per avviare il download
+	link.dispatchEvent(clickEvent);
 }
