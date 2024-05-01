@@ -676,4 +676,8 @@ label {
 	.navbar-right{
 		width: 130px !important;
 	}
+	.button-wrapper{
+		display: flex;
+		flex-direction: row;
+	}
 }
