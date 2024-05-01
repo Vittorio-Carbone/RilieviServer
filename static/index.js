@@ -745,9 +745,9 @@ function visualizzaFoto(url, descrizione, codOperatore, _id) {
 
 function downloadImg() {
 	let img = $("#imgPopup").attr("src");
-	console.log(img);
+    console.log(img);
 
-	// Creare un elemento di ancoraggio
+    // Creare un elemento di ancoraggio
     let a = document.createElement('a');
 
     // Impostare l'URL dell'immagine come href
@@ -756,6 +756,12 @@ function downloadImg() {
     // Impostare l'attributo download con il nome del file desiderato
     a.download = img.split('/').pop();
 
+    // Aggiungere l'elemento di ancoraggio al corpo del documento
+    document.body.appendChild(a);
+
     // Simulare un clic sull'elemento di ancoraggio
     a.click();
+
+    // Rimuovere l'elemento di ancoraggio dal corpo del documento
+    document.body.removeChild(a);
 }
