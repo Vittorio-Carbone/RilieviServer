@@ -744,24 +744,38 @@ function visualizzaFoto(url, descrizione, codOperatore, _id) {
 }
 
 function downloadImg() {
-	let img = $("#imgPopup").attr("src");
-    console.log(img);
+	// Ottieni l'URL dell'immagine
+    let imgURL = $("#imgPopup").attr("src");
 
-    // Creare un elemento di ancoraggio
-    let a = document.createElement('a');
+    // Effettua una richiesta AJAX per scaricare l'immagine
+    $.ajax({
+        url: imgURL,
+        method: 'GET',
+        xhrFields: {
+            responseType: 'blob' // Imposta il tipo di risposta come blob
+        },
+        success: function(data) {
+            // Crea un URL oggetto per il blob restituito dalla risposta
+            let url = window.URL.createObjectURL(new Blob([data]));
 
-    // Impostare l'URL dell'immagine come href
-    a.href = img;
+            // Crea un elemento <a> per il download
+            let downloadLink = document.createElement('a');
+            downloadLink.href = url;
 
-    // Impostare l'attributo download con il nome del file desiderato
-    a.download = img.split('/').pop();
+            // Imposta l'attributo 'download' per forzare il download del file con un nome specificato
+            downloadLink.download = 'nome_immagine.jpg'; // Sostituisci 'nome_immagine' con il nome desiderato
 
-    // Aggiungere l'elemento di ancoraggio al corpo del documento
-    document.body.appendChild(a);
+            // Aggiungi l'elemento <a> al DOM
+            document.body.appendChild(downloadLink);
 
-    // Simulare un clic sull'elemento di ancoraggio
-    a.click();
+            // Simula un click sull'elemento <a> per avviare il download
+            downloadLink.click();
 
-    // Rimuovere l'elemento di ancoraggio dal corpo del documento
-    document.body.removeChild(a);
+            // Rimuovi l'elemento <a> dal DOM
+            document.body.removeChild(downloadLink);
+
+            // Rilascia l'URL oggetto creato per il blob
+            window.URL.revokeObjectURL(url);
+        }
+    });
 }
