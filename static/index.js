@@ -763,7 +763,7 @@ function downloadImg() {
             downloadLink.href = url;
 
             // Imposta l'attributo 'download' per forzare il download del file con un nome specificato
-            downloadLink.download = 'nome_immagine.jpg'; // Sostituisci 'nome_immagine' con il nome desiderato
+            downloadLink.download = 'foto.jpg'; // Sostituisci 'nome_immagine' con il nome desiderato
 
             // Aggiungi l'elemento <a> al DOM
             document.body.appendChild(downloadLink);
