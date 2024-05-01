@@ -743,6 +743,7 @@ function visualizzaFoto(url, descrizione, codOperatore, _id) {
 	$("#overlay").fadeIn(1000);
 }
 
-function downloadImg(img){
+function downloadImg(){
+	let img = $("#imgPopup").attr("src");
 	console.log(img);
 }
