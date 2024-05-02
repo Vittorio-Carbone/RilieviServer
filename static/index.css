@@ -686,4 +686,13 @@ label {
 		margin-left: 150% !important;
 		margin-bottom: 15px !important;
 	}
+	#popupOp{
+		width: 300px !important;
+	}
+	#divNormale{
+		width: 300px !important;
+	}
+	#divDeleteOp{
+		width: 300px !important;
+	}
 }
