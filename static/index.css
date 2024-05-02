@@ -683,7 +683,7 @@ label {
 		align-items: center !important;
 	}
 	.button{
-		margin: 0px auto !important;
+		margin-left: 150% !important;
 		margin-bottom: 15px !important;
 	}
 }
