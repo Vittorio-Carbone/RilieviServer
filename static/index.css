@@ -679,7 +679,7 @@ label {
 	.button-wrapper{
 		width: 40% !important;
 		display: flex !important;
-		flex-direction: row !important;
+		flex-direction: column !important;
 	}
 	.button{
 		margin-bottom: 15px !important;
